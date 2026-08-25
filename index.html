@@ -234,6 +234,96 @@
     .priorities-grid { grid-template-columns: 1fr; }
     .cta-band h2 { font-size: 20px; }
   }
+
+  /* Tab navigation */
+  .tabnav {
+    background: var(--navy-dark);
+  }
+  .tabnav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: #b7bfd1;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .tab-btn:hover { color: #fff; }
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: var(--gold);
+  }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Endorsements */
+  .endorsements-intro {
+    font-size: 17px;
+    color: var(--muted);
+    margin: 0 0 30px;
+  }
+  .endorsements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .endorser-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 16px;
+    text-align: center;
+  }
+  .endorser-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+  }
+  .endorser-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .endorser-card h3 {
+    margin: 0 0 4px;
+    font-size: 15.5px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .endorser-card p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .tab-btn { padding: 10px 14px; font-size: 14px; }
+    .endorsements-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+  @media (max-width: 420px) {
+    .endorsements-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -244,6 +334,15 @@
     <a class="btn-donate" href="https://donorbox.org/kingsley-ma-for-city-council" target="_blank" rel="noopener">Donate</a>
   </div>
 </header>
+
+<nav class="tabnav">
+  <div class="tabnav-inner">
+    <button class="tab-btn active" data-page="home" onclick="showPage('home')">Home</button>
+    <button class="tab-btn" data-page="endorsements" onclick="showPage('endorsements')">Endorsements</button>
+  </div>
+</nav>
+
+<div id="page-home" class="page active">
 
 <section class="hero">
   <div class="container hero-inner">
@@ -305,6 +404,106 @@
   </div>
 </div>
 
+</div><!-- /page-home -->
+
+<div id="page-endorsements" class="page">
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Endorsements</h2>
+    <p class="endorsements-intro">Kingsley is proud to be supported by local leaders, elected officials, and neighbors across San Bruno.</p>
+    <div class="endorsements-grid">
+      <div class="endorser-card">
+        <div class="endorser-avatar">JH</div>
+        <h3>Senator Jerry Hill</h3>
+        <p>California State Senate, 2012&ndash;2020</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">DP</div>
+        <h3>Dave Pine</h3>
+        <p>Former President, San Mateo County Board of Supervisors</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">JR</div>
+        <h3>Jim Ruane</h3>
+        <p>Former Mayor of San Bruno</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">LF</div>
+        <h3>Larry Franzella</h3>
+        <p>Former Mayor of San Bruno</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">IO</div>
+        <h3>Irene O'Connell</h3>
+        <p>Former Vice Mayor of San Bruno</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">KI</div>
+        <h3>Ken Ibarra</h3>
+        <p>Former Vice Mayor of San Bruno</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">LD</div>
+        <h3>Laura Davis</h3>
+        <p>Former Vice Mayor of San Bruno</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">MJ</div>
+        <h3>Mary Lou Johnson</h3>
+        <p>Past Chair / Current Member, San Bruno Planning Commission; Former Owner, Happy Halls Schools</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">MP</div>
+        <h3>Mike Palmer</h3>
+        <p>Chair, San Bruno Parks and Recreation Commission</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">KG</div>
+        <h3>Kris Gonzalez</h3>
+        <p>Vice Chair, San Bruno Parks and Recreation Commission</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">NK</div>
+        <h3>Nancy Kraus</h3>
+        <p>Former President, San Bruno Community Foundation</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">RC</div>
+        <h3>Renee Callentine</h3>
+        <p>Former Treasurer, San Bruno Education Foundation</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">BO</div>
+        <h3>Bill O'Connell</h3>
+        <p>&nbsp;</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">JO</div>
+        <h3>Jennifer O'Connell</h3>
+        <p>&nbsp;</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">MR</div>
+        <h3>Malcolm Robinson</h3>
+        <p>&nbsp;</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">DR</div>
+        <h3>Deanna Robinson</h3>
+        <p>&nbsp;</p>
+      </div>
+      <div class="endorser-card">
+        <div class="endorser-avatar">CS</div>
+        <h3>Callista Shepherd Smith</h3>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-endorsements -->
+
 <footer>
   <div class="footer-links">
     <a href="https://www.votekingsleyma.com" target="_blank" rel="noopener">votekingsleyma.com</a>
@@ -314,6 +513,18 @@
   <div>Kingsley Ma for San Bruno City Council &middot; 2026</div>
   <div class="disclaimer">Paid for by Kingsley Ma for San Bruno City Council 2026.</div>
 </footer>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(function(p) {
+      p.classList.toggle('active', p.id === 'page-' + name);
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('data-page') === name);
+    });
+    window.scrollTo(0, 0);
+  }
+</script>
 
 </body>
 </html>
